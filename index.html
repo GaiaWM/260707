@@ -302,18 +302,47 @@ details.tbl th{color:var(--faint);font-weight:400;text-transform:uppercase;font-
  hedgerows, chimney smoke: a walled
  city, half a morning's walk north."</pre></div>
   </div>
-  <p class="lede" style="margin-top:2.4vh;font-size:clamp(14px,1.45vw,19px)">And what it has seen, it keeps the way we keep places:
-  <b>visited ground becomes episodic memory</b> — <span class="mono" style="font-size:.85em">"walked north — the coast road" · "the ford was impassable"</span> —
-  fading by salience, the unimportant forgotten first. The ghost holds no map; it holds a <em>remembered geography</em>,
-  vivid where life happened, blank where it didn't.</p>
+  <p class="lede" style="margin-top:2.4vh;font-size:clamp(14px,1.45vw,19px)">And what it has seen it holds only as <b>episodic memory of visited
+  places</b> — which fades. The ghost has no map, only a remembered geography. That claim would be
+  hand-waving without a mechanism — <b>so here is the mechanism, next slide.</b></p>
   <p class="figcap" style="max-width:1060px"><b>the culture prompt, verbatim:</b> "You describe places the way someone would when
   looking around. You never mention maps, coordinates, GeoJSON, geometry, layers, or data. You are at ground level.
   You are in a medieval setting where magic is significant." — each world carries its own voice.</p>
 </section>
 
+
+<!-- 7 · forgetting mechanism -->
+<section class="slide" id="s6b" aria-label="The forgetting mechanism">
+  <div class="eyebrow"><span class="idx">07 · </span>Mechanism</div>
+  <h2>Forgetting is a policy, not a metaphor</h2>
+  <div class="percept" style="margin-top:3.2vh">
+    <div class="pcard seen"><div class="k">a real record — kael, read from Redis just now</div>
+      <pre>write (3 days ago):
+ { "content": "world.navigate: failure",
+   "kind": "episodic", "salience": 0.6 }
+
+recall (now):
+ salience_now = <span style="color:var(--ember)">6.4 × 10⁻³⁵</span>   — gone.</pre></div>
+    <div class="pcard known"><div class="k">the law &amp; the policy</div>
+      <pre>salience_now = s₀ · e^(−Δt/τ)   τ = 3600 s
+ after 1 h → 37%   ·   3 h → 5%   ·   3 d → 10⁻³⁵
+
+s₀ encodes importance at write time:
+ 0.95 night plan · 0.7 hard lesson · 0.6 routine step
+
+cap: 200 entries — when full, the entry with the
+ lowest CURRENT salience is evicted, never the
+ one just written. recall + boost re-anchor:
+ s₀ ← salience_now + Δ, t₀ ← now   (rehearsal)</pre></div>
+  </div>
+  <p class="fnote" style="max-width:64ch">So after a day of wandering, what survives is not a log of the day —
+  it is the day's <b style="color:var(--bone)">structure of importance</b>: plans outlive lessons, lessons outlive steps,
+  and anything unrehearsed returns to silence. Same shape as us; fully inspectable, fully tunable (τ, cap, salience table are env vars).</p>
+</section>
+
 <!-- 7 · metabolism -->
 <section class="slide" id="s7" aria-label="Metabolism">
-  <div class="eyebrow"><span class="idx">07 · </span>Metabolism</div>
+  <div class="eyebrow"><span class="idx">08 · </span>Metabolism</div>
   <h2>Thinking is tiring</h2>
   <p class="lede">Every token the ghost burns drains the body that thinks it. Actions cost; rest restores.
   Fatigue is not flavour — <b>it changes what the mind is allowed to do.</b></p>
@@ -327,7 +356,7 @@ details.tbl th{color:var(--faint);font-weight:400;text-transform:uppercase;font-
 
 <!-- 8 · two minds -->
 <section class="slide" id="s8" aria-label="Two minds">
-  <div class="eyebrow"><span class="idx">08 · </span>Two minds</div>
+  <div class="eyebrow"><span class="idx">09 · </span>Two minds</div>
   <h2>System 1 acts. System 2 vetoes.</h2>
   <p class="lede">A small fast model lives every tick; a slower judge vets anything non-trivial —
   Kahneman's dual process, running live. <b>Recorded verbatim from the simulation:</b></p>
@@ -343,7 +372,7 @@ details.tbl th{color:var(--faint);font-weight:400;text-transform:uppercase;font-
 
 <!-- 9 · the world pushes back -->
 <section class="slide" id="s9" aria-label="The world pushes back">
-  <div class="eyebrow"><span class="idx">09 · </span>Affordances</div>
+  <div class="eyebrow"><span class="idx">10 · </span>Affordances</div>
   <h2>The world pushes back</h2>
   <p class="lede">Gibson's affordances, made executable: items unlock actions, skills gate them,
   and the world — not the model — decides what actually happens. Oceans are not walkable.
@@ -355,7 +384,7 @@ details.tbl th{color:var(--faint);font-weight:400;text-transform:uppercase;font-
 
 <!-- 10 · the measurable mind -->
 <section class="slide" id="s10" aria-label="The measurable mind">
-  <div class="eyebrow"><span class="idx">10 · </span>The measurable mind</div>
+  <div class="eyebrow"><span class="idx">11 · </span>The measurable mind</div>
   <h2>Belief, scored against the world</h2>
   <p class="lede">Every action logs a <span class="mono">(predicted confidence, actual outcome, plan order)</span> triple.
   600 resolved actions, live simulation:</p>
@@ -397,7 +426,7 @@ details.tbl th{color:var(--faint);font-weight:400;text-transform:uppercase;font-
 
 <!-- 11 · agentic psychometry -->
 <section class="slide" id="s10b" aria-label="Agentic psychometry">
-  <div class="eyebrow"><span class="idx">11 · </span>Agentic psychometry</div>
+  <div class="eyebrow"><span class="idx">12 · </span>Agentic psychometry</div>
   <h2>Ninety years of measurement science, pointed at agents</h2>
   <div class="frags">
     <div class="frag"><div class="k">the instrument</div>
@@ -415,7 +444,7 @@ details.tbl th{color:var(--faint);font-weight:400;text-transform:uppercase;font-
 
 <!-- 11 · same shell, different ghost -->
 <section class="slide" id="s11" aria-label="Same shell different ghost">
-  <div class="eyebrow"><span class="idx">12 · </span>Identity</div>
+  <div class="eyebrow"><span class="idx">13 · </span>Identity</div>
   <h2>Same shell, different ghost</h2>
   <div class="frags">
     <div class="frag"><div class="k">🜂 soul &amp; 🎯 goal</div>
@@ -429,7 +458,7 @@ details.tbl th{color:var(--faint);font-weight:400;text-transform:uppercase;font-
 
 <!-- 12 · the living lab -->
 <section class="slide" id="s12" aria-label="The living lab">
-  <div class="eyebrow"><span class="idx">13 · </span>The living lab</div>
+  <div class="eyebrow"><span class="idx">14 · </span>The living lab</div>
   <h2>Running today, on Toril</h2>
   <div class="lab">
     <div class="card"><div class="k">a real geography</div>
@@ -445,7 +474,7 @@ details.tbl th{color:var(--faint);font-weight:400;text-transform:uppercase;font-
 
 <!-- 13 · close -->
 <section class="slide" id="s13" aria-label="Closing">
-  <div class="eyebrow"><span class="idx">14 · </span>Fin</div>
+  <div class="eyebrow"><span class="idx">15 · </span>Fin</div>
   <h2>The ghost is the model.<br>The <span class="e">shell</span> is what makes it <span class="g">someone</span>.</h2>
   <div class="closing">
     <span>GAIAWM · OPEN FANTASY MAPS</span>
@@ -456,7 +485,7 @@ details.tbl th{color:var(--faint);font-weight:400;text-transform:uppercase;font-
 </section>
 
 <div id="dots" role="tablist" aria-label="slides"></div>
-<div id="count">1 / 14</div>
+<div id="count">1 / 15</div>
 <div id="hint">← → · SPACE</div>
 
 <script>
