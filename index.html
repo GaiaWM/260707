@@ -174,6 +174,14 @@ details.tbl th{color:var(--faint);font-weight:400;text-transform:uppercase;font-
 .lab p{margin-top:9px;color:var(--mut);font-size:clamp(13px,1.25vw,16px);line-height:1.55}
 .lab p b{color:var(--bone);font-weight:560}
 
+/* references */
+.refs{margin-top:3.2vh;border-top:1px solid var(--line);padding-top:14px;max-width:900px;
+  display:flex;flex-direction:column;gap:9px}
+.refs .r{font:11.5px/1.65 var(--mono);color:var(--mut)}
+.refs .r b{color:var(--bone);font-weight:400}
+.refs .r .v{color:var(--ghost)}
+.reflab{font:10px/1 var(--mono);letter-spacing:.2em;color:var(--faint);text-transform:uppercase}
+
 /* close */
 #s13 h2{max-width:26ch}
 .closing{margin-top:4vh;display:flex;flex-direction:column;gap:10px;font:12.5px/1.7 var(--mono);color:var(--mut)}
@@ -371,11 +379,34 @@ details.tbl th{color:var(--faint);font-weight:400;text-transform:uppercase;font-
     </details>
   </div>
   <p class="fnote"><b class="mono" style="color:var(--bone)">Overconfidence grows with plan depth.</b> Calibrated on one step, wrong by a third at three — the dual-process thesis, measured, on any model you plug in.</p>
+  <div class="refs">
+    <span class="reflab">framework</span>
+    <div class="r">Montanari et al. — <b>Affordance Order, Planning Depth, and Epistemic Uncertainty: a Dual-Process Model for LLM-Based Agents in Persistent Environments.</b> <span class="v">GaiaWM, 2026 (draft)</span></div>
+  </div>
+</section>
+
+
+<!-- 11 · agentic psychometry -->
+<section class="slide" id="s10b" aria-label="Agentic psychometry">
+  <div class="eyebrow"><span class="idx">11 · </span>Agentic psychometry</div>
+  <h2>Ninety years of measurement science, pointed at agents</h2>
+  <div class="frags">
+    <div class="frag"><div class="k">the instrument</div>
+      <p>The <b>Vineland-3</b> (VABS-3) has quantified human <em>adaptive functioning</em> since 1936. We adapt its methodology to LLM agents with world models — because agent deployment is adaptive behaviour, not question-answering.</p></div>
+    <div class="frag"><div class="k">what survives adaptation</div>
+      <p>The hierarchical domain/subdomain structure and polytomous scoring stay. Age norms become <b>capability tiers</b>; caregiver observation becomes <b>performance-frequency over N runs</b>; 72 LLM-native items, scored by a Graded Response Model.</p></div>
+    <div class="frag"><div class="k">a fourth domain</div>
+      <p><b>Agentic Functioning</b> — capabilities with no human analogue: <span class="mono g">world-model maintenance · tool use · context management · affordance discovery</span>. The shell is the apparatus; this is the instrument you read it with.</p></div>
+  </div>
+  <div class="refs">
+    <span class="reflab">reference</span>
+    <div class="r">Montanari, Gigli, Zyrianoff &amp; Di Felice — <b>A Psychometrically-Grounded Assessment Framework for LLM Agents with World Models: Adapting the Vineland-3 Methodology.</b> <span class="v">GaiaWM · Univ. of Bologna (DISI/ARCES) · NeurIPS 2026 Evaluations &amp; Datasets track (in submission)</span></div>
+  </div>
 </section>
 
 <!-- 11 · same shell, different ghost -->
 <section class="slide" id="s11" aria-label="Same shell different ghost">
-  <div class="eyebrow"><span class="idx">11 · </span>Identity</div>
+  <div class="eyebrow"><span class="idx">12 · </span>Identity</div>
   <h2>Same shell, different ghost</h2>
   <div class="frags">
     <div class="frag"><div class="k">🜂 soul &amp; 🎯 goal</div>
@@ -389,7 +420,7 @@ details.tbl th{color:var(--faint);font-weight:400;text-transform:uppercase;font-
 
 <!-- 12 · the living lab -->
 <section class="slide" id="s12" aria-label="The living lab">
-  <div class="eyebrow"><span class="idx">12 · </span>The living lab</div>
+  <div class="eyebrow"><span class="idx">13 · </span>The living lab</div>
   <h2>Running today, on Toril</h2>
   <div class="lab">
     <div class="card"><div class="k">a real geography</div>
@@ -405,17 +436,18 @@ details.tbl th{color:var(--faint);font-weight:400;text-transform:uppercase;font-
 
 <!-- 13 · close -->
 <section class="slide" id="s13" aria-label="Closing">
-  <div class="eyebrow"><span class="idx">13 · </span>Fin</div>
+  <div class="eyebrow"><span class="idx">14 · </span>Fin</div>
   <h2>The ghost is the model.<br>The <span class="e">shell</span> is what makes it <span class="g">someone</span>.</h2>
   <div class="closing">
     <span>GAIAWM · OPEN FANTASY MAPS</span>
     <span class="g">github.com/openfantasymap</span>
     <span>ghosts are wandering the Sword Coast as you read this.</span>
+    <span style="margin-top:8px;color:var(--faint)">papers · Affordance Order, Planning Depth &amp; Epistemic Uncertainty (2026) · Vineland-3 Adapted: Psychometric Assessment for LLM Agents (NeurIPS 2026 E&amp;D, in submission)</span>
   </div>
 </section>
 
 <div id="dots" role="tablist" aria-label="slides"></div>
-<div id="count">1 / 13</div>
+<div id="count">1 / 14</div>
 <div id="hint">← → · SPACE</div>
 
 <script>
