@@ -286,20 +286,25 @@ details.tbl th{color:var(--faint);font-weight:400;text-transform:uppercase;font-
 <section class="slide" id="s6" aria-label="Position blindness">
   <div class="eyebrow"><span class="idx">06 · </span>Position blindness</div>
   <h2>A brain has no access to its own coordinates</h2>
-  <p class="lede">Not a security control — <b>a constraint of embodiment</b>. The world organ scrubs every
-  geometry before the ghost sees it. Location must be <em>inferred</em>, the way a person does it.</p>
+  <p class="lede">Not a security control — <b>a constraint of embodiment</b>. The world organ takes the
+  GeoJSON surrounding the agent and returns only its <b>narration, in the culture of the place</b>.
+  No layer names, no numbers, no coordinates survive. Location must be <em>inferred</em>, the way a person does it.</p>
   <div class="percept">
     <div class="pcard known"><div class="k">what the system knows</div>
       <pre><span class="strike">lon −79.7143 · lat 48.8344</span>
-<span class="strike">pov · features · geometry · GeoJSON</span>
-<span class="strike">GEOADD agents-toril …</span></pre></div>
-    <div class="pcard seen"><div class="k">what the ghost perceives</div>
-      <pre>"within North Sword Coast;
- Neverwinter 1.4 km off;
- the High Road 2.6 km off;
- the Neverwinter River 8.8 km off;
- The Crags 32.5 km off."</pre></div>
+<span class="strike">features: roads · urban_buildings ·</span>
+<span class="strike">  cities · rivers · oceans · politics</span>
+<span class="strike">geometry · pov · GeoJSON · GEOADD …</span></pre></div>
+    <div class="pcard seen"><div class="k">what the ghost perceives — the voice of Toril <span style="color:var(--faint)">(illustrative)</span></div>
+      <pre>"The salt wind says the sea is near.
+ Paved stone underfoot — the High Road,
+ by the wear of it — and past the
+ hedgerows, chimney smoke: a walled
+ city, half a morning's walk north."</pre></div>
   </div>
+  <p class="figcap" style="max-width:1060px"><b>the culture prompt, verbatim:</b> "You describe places the way someone would when
+  looking around. You never mention maps, coordinates, GeoJSON, geometry, layers, or data. You are at ground level.
+  You are in a medieval setting where magic is significant." — each world carries its own voice.</p>
 </section>
 
 <!-- 7 · metabolism -->
